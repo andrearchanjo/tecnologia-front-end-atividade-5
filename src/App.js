@@ -45,7 +45,7 @@ const App = () => {
   };
 
   return (
-    <div className='App'>
+    <div className='App' style={{marginTop: '10px'}}>
       <label htmlFor='tarefa'> Tarefa: </label>
       <input
         id='tarefa'
