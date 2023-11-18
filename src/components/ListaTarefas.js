@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Tarefa from "./Tarefa";
 
 const ListaTarefas = (props) => {
+    const { listaTarefas, onEditarTarefa, onExcluirTarefa } = props;
 
-    const [listaTarefas, setListaTarefas] = useState(props.listaTarefas);
-
-    useEffect(() => {
-        setListaTarefas(props.listaTarefas);
-    }, [props.listaTarefas]);
-  
     return (
         <div>
-            {
-                listaTarefas.map((c, index) => (
-                    <Tarefa key={index} value={c} index={index}/>
-                ))
-            }
+            {listaTarefas.map((tarefa, index) => (
+                <Tarefa
+                    key={index}
+                    index={index}
+                    value={tarefa}
+                    onEditarTarefa={onEditarTarefa}
+                    onExcluirTarefa={onExcluirTarefa}/>
+            ))}
         </div>
     );
 };
