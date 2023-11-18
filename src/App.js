@@ -1,6 +1,7 @@
 import './App.css';
-import InputTarefa from './components/InputTarefa';
 import { useState } from 'react';
+import InputTarefa from './components/InputTarefa';
+import ListaTarefas from './components/ListaTarefas';
 
 const App = () => {
   const [tarefas, setTarefas] = useState([]);
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <div className='App'>
       <InputTarefa id="tarefa" label="Tarefa:" placeholder="Digite algo..." onAddTarefa={addTarefa} />
+      <ListaTarefas listaTarefas={tarefas}/>
     </div>
   );
 };
