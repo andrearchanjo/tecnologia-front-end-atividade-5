@@ -54,13 +54,12 @@ const App = () => {
         value={inputTarefa}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-      />
+        className='input-tarefa'/>
       <hr />
       <ListaTarefas
         listaTarefas={tarefas}
         onEditarTarefa={editarTarefa}
-        onExcluirTarefa={excluirTarefa}
-      />
+        onExcluirTarefa={excluirTarefa}/>
     </div>
   );
 };

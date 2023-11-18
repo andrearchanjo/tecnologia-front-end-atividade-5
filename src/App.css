@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.tarefa {
+  font-size: 16px;
+  color: #333;
+}
+
+.destacado {
+  background-color: blue;
+  color: white;  /* Adicione esta linha se quiser texto branco no fundo azul */
+  font-weight: bold;
+}
+
+.input-tarefa {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.botao-tarefa {
+  padding: 5px 10px;
+  background-color: rgb(205, 51, 24);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
