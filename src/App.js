@@ -8,7 +8,7 @@ const App = () => {
 
   const onAddTarefa = (novaTarefa) => {
     setTarefas((prevTarefas) => {
-      const novasTarefas = [...prevTarefas, novaTarefa];
+      const novasTarefas = [...prevTarefas, { id: prevTarefas.length, value: novaTarefa }];
       return novasTarefas;
     });
 
@@ -27,19 +27,20 @@ const App = () => {
     }
   };
 
-  const editarTarefa = (index, novoValor) => {
+  const editarTarefa = (id, novoValor) => {
     setTarefas((prevTarefas) => {
       const novasTarefas = [...prevTarefas];
-      novasTarefas[index] = novoValor;
+      const index = novasTarefas.findIndex((tarefa) => tarefa.id === id);
+      if (index !== -1) {
+        novasTarefas[index].value = novoValor;
+      }
       return novasTarefas;
     });
   };
 
-  const excluirTarefa = (index) => {
+  const excluirTarefa = (id) => {
     setTarefas((prevTarefas) => {
-      const novasTarefas = [...prevTarefas];
-      novasTarefas.splice(index, 1);
-      return novasTarefas;
+      return prevTarefas.filter((tarefa) => tarefa.id !== id);
     });
   };
 
@@ -52,12 +53,14 @@ const App = () => {
         placeholder='Digite a sua tarefa...'
         value={inputTarefa}
         onChange={handleInputChange}
-        onKeyDown={handleKeyDown}/>
+        onKeyDown={handleKeyDown}
+      />
       <hr />
       <ListaTarefas
         listaTarefas={tarefas}
         onEditarTarefa={editarTarefa}
-        onExcluirTarefa={excluirTarefa}/>
+        onExcluirTarefa={excluirTarefa}
+      />
     </div>
   );
 };
