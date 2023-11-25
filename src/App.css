@@ -37,22 +37,47 @@
   }
 }
 
+/* Estilização dos campos */
+label {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #555;
+}
+
+.input-tarefa {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-right: 5px;
+}
+
+.input-tarefa:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+}
+
 .tarefa {
   font-size: 16px;
+  color: #333;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tarefa:hover {
+  background-color: #f5f5f5;
   color: #333;
 }
 
 .destacado {
   background-color: blue;
-  color: white;  /* Adicione esta linha se quiser texto branco no fundo azul */
+  color: white;
   font-weight: bold;
-}
-
-.input-tarefa {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-right: 10px;
 }
 
 .botao-tarefa {
